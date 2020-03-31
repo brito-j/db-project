@@ -1,24 +1,23 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'rootpass');
-define('DB_NAME', 'test');
+function connect() {
+  $db_host = 'localhost';
+  $db_port = '3308';
+  $db_user = 'root';
+  $db_pass = 'rootpass';
+  $db_name = 'test';
 
-function connect()
-{
-  $connect = mysqli_connect(DB_HOST ,DB_USER ,DB_PASS ,DB_NAME);
+  $connection = new PDO('mysql:host='.$db_host.';port='.$db_port.';dbname='.$db_name, $db_user, $db_pass);
 
-  if (mysqli_connect_errno($connect)) {
-    die("Failed to connect:" . mysqli_connect_error());
+  if (!$connection) {
+    die("Connection unsuccessful:");
   }
 
-  mysqli_set_charset($connect, "utf8");
-
-  return $connect;
+  return $connection;
 }
 
-$con = connect();
+$connection = connect();

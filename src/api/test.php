@@ -1,13 +1,14 @@
 <?php
 require 'database.php';
 
-$sql = "SELECT \"Connection successful!\"";
+$query = "SELECT \"Connection successful!\"";
 
-if($res = mysqli_query($con,$sql))
-{
+try {
+  $statement = $connection->prepare($query);
+  $statement->execute();
+  $res = $statement->fetchAll();
   echo json_encode($res);
-}
-else
-{
-  http_response_code(404);
+} catch (PDOException $exception) {
+  $res = "Query: " . $query . " unsuccessful.";
+  echo json_encode($res);
 }
