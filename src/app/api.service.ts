@@ -11,6 +11,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   test(): any {
-    return this.httpClient.get("");
+    return this.httpClient.get("http://localhost/db-project/test.php");
   }
 }

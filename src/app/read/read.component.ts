@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from '../interfaces/application';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-read',
@@ -63,8 +64,11 @@ export class ReadComponent implements OnInit {
     original_cert_date: "1"
   };
   apps: any = [];
+  res: any = "";
 
-  constructor() { let x = 0; while (x < 25) { this.apps.push(this.app); x++; } }
+  constructor(private apiService: ApiService) { let x = 0; while (x < 25) { this.apps.push(this.app); x++; } }
+
+  test(): void { this.apiService.test().subscribe((data: any) => this.res = data[0]['0']); }
 
   ngOnInit(): void {
   }
