@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  test(): any {
+  load(): any {
     return this.httpClient.get("http://localhost/db-project/test.php");
   }
 }

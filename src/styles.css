@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.datagrid-table .datagrid-column .datagrid-column-title{
+  text-align: center;
+  justify-content: center;
+}
+
+.datagrid-table .datagrid-cell{
+  text-align: center;
+}

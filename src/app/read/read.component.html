@@ -1,116 +1,115 @@
-<button class="btn btn-outline" (click)="test()">test connection</button> {{res}}
-<clr-datagrid>
-  <clr-dg-column>case_number</clr-dg-column>
-  <clr-dg-column>case_status</clr-dg-column>
-  <clr-dg-column>case_submitted</clr-dg-column>
-  <clr-dg-column>decision_date</clr-dg-column>
-  <clr-dg-column>visa_class</clr-dg-column>
-  <clr-dg-column>employment_start_date</clr-dg-column>
-  <clr-dg-column>employment_end_date</clr-dg-column>
-  <clr-dg-column>employer_name</clr-dg-column>
-  <clr-dg-column>employer_business_dba</clr-dg-column>
-  <clr-dg-column>employer_address</clr-dg-column>
-  <clr-dg-column>employer_city</clr-dg-column>
-  <clr-dg-column>employer_state</clr-dg-column>
-  <clr-dg-column>employer_postal_code</clr-dg-column>
-  <clr-dg-column>employer_country</clr-dg-column>
-  <clr-dg-column>employer_province</clr-dg-column>
-  <clr-dg-column>employer_phone</clr-dg-column>
-  <clr-dg-column>employer_phone_ext</clr-dg-column>
-  <clr-dg-column>agent_representing_employer</clr-dg-column>
-  <clr-dg-column>agent_attorney_name</clr-dg-column>
-  <clr-dg-column>agent_attorney_city</clr-dg-column>
-  <clr-dg-column>agent_attorney_state</clr-dg-column>
-  <clr-dg-column>job_title</clr-dg-column>
-  <clr-dg-column>soc_code</clr-dg-column>
-  <clr-dg-column>soc_name</clr-dg-column>
-  <clr-dg-column>naics_code</clr-dg-column>
-  <clr-dg-column>total_workers</clr-dg-column>
-  <clr-dg-column>new_employment</clr-dg-column>
-  <clr-dg-column>continued_employment</clr-dg-column>
-  <clr-dg-column>change_previous_employment</clr-dg-column>
-  <clr-dg-column>new_concurrent_employment</clr-dg-column>
-  <clr-dg-column>change_employer</clr-dg-column>
-  <clr-dg-column>amended_petition</clr-dg-column>
-  <clr-dg-column>full_time_position</clr-dg-column>
-  <clr-dg-column>prevailing_wage</clr-dg-column>
-  <clr-dg-column>pw_unit_of_pay</clr-dg-column>
-  <clr-dg-column>pw_wage_level</clr-dg-column>
-  <clr-dg-column>pw_source</clr-dg-column>
-  <clr-dg-column>pw_source_year</clr-dg-column>
-  <clr-dg-column>pw_source_other</clr-dg-column>
-  <clr-dg-column>wage_rate_of_pay_from</clr-dg-column>
-  <clr-dg-column>wage_rate_of_pay_to</clr-dg-column>
-  <clr-dg-column>wage_unit_of_pay</clr-dg-column>
-  <clr-dg-column>h1b_dependent</clr-dg-column>
-  <clr-dg-column>willful_violator</clr-dg-column>
-  <clr-dg-column>support_h1b</clr-dg-column>
-  <clr-dg-column>labor_con_agree</clr-dg-column>
-  <clr-dg-column>public_disclosure_location</clr-dg-column>
-  <clr-dg-column>worksite_city</clr-dg-column>
-  <clr-dg-column>worksite_county</clr-dg-column>
-  <clr-dg-column>worksite_state</clr-dg-column>
-  <clr-dg-column>worksite_postal_code</clr-dg-column>
-  <clr-dg-column>original_cert_date</clr-dg-column>
+<clr-datagrid class="datagrid-compact">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Case Status</clr-dg-column>
+  <clr-dg-column>Case Submitted</clr-dg-column>
+  <clr-dg-column>Decision Date</clr-dg-column>
+  <clr-dg-column>Visa Class</clr-dg-column>
+  <clr-dg-column>Employment Start Date</clr-dg-column>
+  <clr-dg-column>Employment End Date</clr-dg-column>
+  <clr-dg-column>Employer Name</clr-dg-column>
+  <clr-dg-column>Employer Business DBA</clr-dg-column>
+  <clr-dg-column>Employer Address</clr-dg-column>
+  <clr-dg-column>Employer City</clr-dg-column>
+  <clr-dg-column>Employer State</clr-dg-column>
+  <clr-dg-column>Employer Postal Code</clr-dg-column>
+  <clr-dg-column>Employer Country</clr-dg-column>
+  <clr-dg-column>Employer Province</clr-dg-column>
+  <clr-dg-column>Employer Phone</clr-dg-column>
+  <clr-dg-column>Employer Phone Ext</clr-dg-column>
+  <clr-dg-column>Agent Representing Employer</clr-dg-column>
+  <clr-dg-column>Agent Attorney Name</clr-dg-column>
+  <clr-dg-column>Agent Attorney City</clr-dg-column>
+  <clr-dg-column>Agent Attorney State</clr-dg-column>
+  <clr-dg-column>Job Title</clr-dg-column>
+  <clr-dg-column>Soc Code</clr-dg-column>
+  <clr-dg-column>Soc Name</clr-dg-column>
+  <clr-dg-column>NAICS Code</clr-dg-column>
+  <clr-dg-column>Total Workers</clr-dg-column>
+  <clr-dg-column>New Employment</clr-dg-column>
+  <clr-dg-column>Continued Employment</clr-dg-column>
+  <clr-dg-column>Change Previous Employment</clr-dg-column>
+  <clr-dg-column>New Concurrent Employment</clr-dg-column>
+  <clr-dg-column>Change Employer</clr-dg-column>
+  <clr-dg-column>Amended Petition</clr-dg-column>
+  <clr-dg-column>Full-Time Position</clr-dg-column>
+  <clr-dg-column>Prevailing Wage</clr-dg-column>
+  <clr-dg-column>PW Unit of Pay</clr-dg-column>
+  <clr-dg-column>PW Wage Level</clr-dg-column>
+  <clr-dg-column>PW Source</clr-dg-column>
+  <clr-dg-column>PW Source Year</clr-dg-column>
+  <clr-dg-column>PW Source Other</clr-dg-column>
+  <clr-dg-column>Wage Rate of Pay From</clr-dg-column>
+  <clr-dg-column>Wage Rate of Pay To</clr-dg-column>
+  <clr-dg-column>Wage Unit of Pay</clr-dg-column>
+  <clr-dg-column>H1B Dependent</clr-dg-column>
+  <clr-dg-column>Willful Violator</clr-dg-column>
+  <clr-dg-column>Support H1B</clr-dg-column>
+  <clr-dg-column>Labor Con Agree</clr-dg-column>
+  <clr-dg-column>Public Disclosure Location</clr-dg-column>
+  <clr-dg-column>Worksite City</clr-dg-column>
+  <clr-dg-column>Worksite County</clr-dg-column>
+  <clr-dg-column>Worksite State</clr-dg-column>
+  <clr-dg-column>Worksite Postal Code</clr-dg-column>
+  <clr-dg-column>Original Cert Date</clr-dg-column>
 
   <clr-dg-row *clrDgItems="let app of apps">
-    <clr-dg-cell>{{app.case_number}}</clr-dg-cell>
-    <clr-dg-cell>{{app.case_status}}</clr-dg-cell>
-    <clr-dg-cell>{{app.case_submitted}}</clr-dg-cell>
-    <clr-dg-cell>{{app.decision_date}}</clr-dg-cell>
-    <clr-dg-cell>{{app.visa_class}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employment_start_date}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employment_end_date}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_name}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_business_dba}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_address}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_city}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_state}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_postal_code}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_country}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_province}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_phone}}</clr-dg-cell>
-    <clr-dg-cell>{{app.employer_phone_ext}}</clr-dg-cell>
-    <clr-dg-cell>{{app.agent_representing_employer}}</clr-dg-cell>
-    <clr-dg-cell>{{app.agent_attorney_name}}</clr-dg-cell>
-    <clr-dg-cell>{{app.agent_attorney_city}}</clr-dg-cell>
-    <clr-dg-cell>{{app.agent_attorney_state}}</clr-dg-cell>
-    <clr-dg-cell>{{app.job_title}}</clr-dg-cell>
-    <clr-dg-cell>{{app.soc_code}}</clr-dg-cell>
-    <clr-dg-cell>{{app.soc_name}}</clr-dg-cell>
-    <clr-dg-cell>{{app.naics_code}}</clr-dg-cell>
-    <clr-dg-cell>{{app.total_workers}}</clr-dg-cell>
-    <clr-dg-cell>{{app.new_employment}}</clr-dg-cell>
-    <clr-dg-cell>{{app.continued_employment}}</clr-dg-cell>
-    <clr-dg-cell>{{app.change_previous_employment}}</clr-dg-cell>
-    <clr-dg-cell>{{app.new_concurrent_employment}}</clr-dg-cell>
-    <clr-dg-cell>{{app.change_employer}}</clr-dg-cell>
-    <clr-dg-cell>{{app.amended_petition}}</clr-dg-cell>
-    <clr-dg-cell>{{app.full_time_position}}</clr-dg-cell>
-    <clr-dg-cell>{{app.prevailing_wage}}</clr-dg-cell>
-    <clr-dg-cell>{{app.pw_unit_of_pay}}</clr-dg-cell>
-    <clr-dg-cell>{{app.pw_wage_level}}</clr-dg-cell>
-    <clr-dg-cell>{{app.pw_source}}</clr-dg-cell>
-    <clr-dg-cell>{{app.pw_source_year}}</clr-dg-cell>
-    <clr-dg-cell>{{app.pw_source_other}}</clr-dg-cell>
-    <clr-dg-cell>{{app.wage_rate_of_pay_from}}</clr-dg-cell>
-    <clr-dg-cell>{{app.wage_rate_of_pay_to}}</clr-dg-cell>
-    <clr-dg-cell>{{app.wage_unit_of_pay}}</clr-dg-cell>
-    <clr-dg-cell>{{app.h1b_dependent}}</clr-dg-cell>
-    <clr-dg-cell>{{app.willful_violator}}</clr-dg-cell>
-    <clr-dg-cell>{{app.support_h1b}}</clr-dg-cell>
-    <clr-dg-cell>{{app.labor_con_agree}}</clr-dg-cell>
-    <clr-dg-cell>{{app.public_disclosure_location}}</clr-dg-cell>
-    <clr-dg-cell>{{app.worksite_city}}</clr-dg-cell>
-    <clr-dg-cell>{{app.worksite_county}}</clr-dg-cell>
-    <clr-dg-cell>{{app.worksite_state}}</clr-dg-cell>
-    <clr-dg-cell>{{app.worksite_postal_code}}</clr-dg-cell>
-    <clr-dg-cell>{{app.original_cert_date}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CASE_NUMBER}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CASE_STATUS}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CASE_SUBMITTED}}</clr-dg-cell>
+    <clr-dg-cell>{{app.DECISION_DATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.VISA_CLASS}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYMENT_START_DATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYMENT_END_DATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_NAME}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_BUSINESS_DBA}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_ADDRESS}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_CITY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_STATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_POSTAL_CODE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_COUNTRY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_PROVINCE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_PHONE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.EMPLOYER_PHONE_EXT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.AGENT_REPRESENTING_EMPLOYER}}</clr-dg-cell>
+    <clr-dg-cell>{{app.AGENT_ATTORNEY_NAME}}</clr-dg-cell>
+    <clr-dg-cell>{{app.AGENT_ATTORNEY_CITY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.AGENT_ATTORNEY_STATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.JOB_TITLE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.SOC_CODE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.SOC_NAME}}</clr-dg-cell>
+    <clr-dg-cell>{{app.NAICS_CODE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.TOTAL_WORKERS}}</clr-dg-cell>
+    <clr-dg-cell>{{app.NEW_EMPLOYMENT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CONTINUED_EMPLOYMENT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CHANGE_PREVIOUS_EMPLOYMENT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.NEW_CONCURRENT_EMPLOYMENT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.CHANGE_EMPLOYER}}</clr-dg-cell>
+    <clr-dg-cell>{{app.AMENDED_PETITION}}</clr-dg-cell>
+    <clr-dg-cell>{{app.FULL_TIME_POSITION}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PREVAILING_WAGE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PW_UNIT_OF_PAY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PW_WAGE_LEVEL}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PW_SOURCE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PW_SOURCE_YEAR}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PW_SOURCE_OTHER}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WAGE_RATE_OF_PAY_FROM}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WAGE_RATE_OF_PAY_TO}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WAGE_UNIT_OF_PAY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.H1B_DEPENDENT}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WILLFUL_VIOLATOR}}</clr-dg-cell>
+    <clr-dg-cell>{{app.SUPPORT_H1B}}</clr-dg-cell>
+    <clr-dg-cell>{{app.LABOR_CON_AGREE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.PUBLIC_DISCLOSURE_LOCATION}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WORKSITE_CITY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WORKSITE_COUNTY}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WORKSITE_STATE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.WORKSITE_POSTAL_CODE}}</clr-dg-cell>
+    <clr-dg-cell>{{app.ORIGINAL_CERT_DATE}}</clr-dg-cell>
   </clr-dg-row>
 
   <clr-dg-footer>
     <clr-dg-pagination #pagination [clrDgPageSize]="5">
-      <clr-dg-page-size [clrPageSizeOptions]="[5, 10, 20]">applications per page</clr-dg-page-size>
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">applications per page</clr-dg-page-size>
       {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} applications
     </clr-dg-pagination>
   </clr-dg-footer>
