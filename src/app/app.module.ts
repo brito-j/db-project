@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { ReadComponent } from './read/read.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ReadComponent
+    ReadComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
