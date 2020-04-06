@@ -10,6 +10,7 @@ import { ReadComponent } from './read/read.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { AboutDataComponent } from './about-data/about-data.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     HeaderComponent,
     ReadComponent,
     AboutComponent,
-    SidenavComponent
+    SidenavComponent,
+    AboutDataComponent
   ],
   imports: [
     BrowserModule,
