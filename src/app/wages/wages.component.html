@@ -1,0 +1,34 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Prevailing Wage</clr-dg-column>
+  <clr-dg-column>PW Unit of Pay</clr-dg-column>
+  <clr-dg-column>PW Wage Level</clr-dg-column>
+  <clr-dg-column>PW Source</clr-dg-column>
+  <clr-dg-column>PW Source Year</clr-dg-column>
+  <clr-dg-column>PW Source Other</clr-dg-column>
+  <clr-dg-column>Wage Rate of Pay From</clr-dg-column>
+  <clr-dg-column>Wage Rate of Pay To</clr-dg-column>
+  <clr-dg-column>Wage Unit of Pay</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.prevailing_wage}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.pw_unit_of_pay}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.pw_wage_level}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.pw_source}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.pw_source_year}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.pw_source_other}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.wage_rate_of_pay_from}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.wage_rate_of_pay_to}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.wage_unit_of_pay}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

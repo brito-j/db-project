@@ -1,0 +1,24 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>H1B Dependent</clr-dg-column>
+  <clr-dg-column>Willful Violator</clr-dg-column>
+  <clr-dg-column>Support H1B</clr-dg-column>
+  <clr-dg-column>Labor Con Agree</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.h1b_dependent}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.willful_violator}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.support_h1b}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.labor_con_agree}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

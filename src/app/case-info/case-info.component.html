@@ -1,0 +1,29 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Case Status</clr-dg-column>
+  <clr-dg-column>Case Submitted</clr-dg-column>
+  <clr-dg-column>Decision Date</clr-dg-column>
+  <clr-dg-column>Visa Class</clr-dg-column>
+  <clr-dg-column>Employment Start Date</clr-dg-column>
+  <clr-dg-column>Employment End Date</clr-dg-column>
+  <clr-dg-column>Original Cert Date</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.case_status}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.case_submitted}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.decision_date}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.visa_class}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employment_start_date}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employment_end_date}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.original_cert_date}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

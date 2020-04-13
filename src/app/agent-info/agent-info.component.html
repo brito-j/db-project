@@ -1,0 +1,24 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Agent Representing Employer</clr-dg-column>
+  <clr-dg-column>Agent Attorney Name</clr-dg-column>
+  <clr-dg-column>Agent Attorney City</clr-dg-column>
+  <clr-dg-column>Agent Attorney State</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.agent_representing_employer}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.agent_attorney_name}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.agent_attorney_city}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.agent_attorney_state}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

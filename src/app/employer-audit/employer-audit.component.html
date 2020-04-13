@@ -1,0 +1,38 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Employer Name</clr-dg-column>
+  <clr-dg-column>Employer Business DBA</clr-dg-column>
+  <clr-dg-column>Employer Address</clr-dg-column>
+  <clr-dg-column>Employer City</clr-dg-column>
+  <clr-dg-column>Employer State</clr-dg-column>
+  <clr-dg-column>Employer Postal Code</clr-dg-column>
+  <clr-dg-column>Employer Country</clr-dg-column>
+  <clr-dg-column>Employer Province</clr-dg-column>
+  <clr-dg-column>Employer Phone</clr-dg-column>
+  <clr-dg-column>Employer Phone Ext</clr-dg-column>
+  <clr-dg-column>Date Changed</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_name}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_business_dba}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_address}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_city}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_state}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_postal_code}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_country}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_province}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_phone}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_phone_ext}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.date_changed}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

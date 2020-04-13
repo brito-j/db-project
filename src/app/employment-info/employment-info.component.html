@@ -1,0 +1,32 @@
+<clr-datagrid [(clrDgSelected)]="selected">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Total Workers</clr-dg-column>
+  <clr-dg-column>New Employment</clr-dg-column>
+  <clr-dg-column>Continued Employment</clr-dg-column>
+  <clr-dg-column>Change Previous Employment</clr-dg-column>
+  <clr-dg-column>New Concurrent Employment</clr-dg-column>
+  <clr-dg-column>Change Employer</clr-dg-column>
+  <clr-dg-column>Amended Petition</clr-dg-column>
+  <clr-dg-column>Full-Time Position</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.total_workers}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.new_employment}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.continued_employment}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.change_previous_employment}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.new_concurrent_employment}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.change_employer}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.amended_petition}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.full_time_position}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

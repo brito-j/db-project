@@ -11,8 +11,8 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  read(): any {
-    return this.httpClient.get(this.api + "read.php");
+  read(table: string): any {
+    return this.httpClient.get(this.api + "read.php?table=" + table);
   }
 
   readMega(): any {
