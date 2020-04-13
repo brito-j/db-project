@@ -9,12 +9,12 @@ function connect() {
   $db_port = '3308';
   $db_user = 'root';
   $db_pass = 'rootpass';
-  $db_name = 'test';
+  $db_name = 'h1b_mega';
 
   $connection = new PDO('mysql:host='.$db_host.';port='.$db_port.';dbname='.$db_name, $db_user, $db_pass);
 
   if (!$connection) {
-    die("Connection unsuccessful:");
+    die("Connection unsuccessful.");
   }
 
   return $connection;
