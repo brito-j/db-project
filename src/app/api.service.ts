@@ -6,11 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  api = "http://127.0.0.1:80";
+  api = "http://localhost/db-project/h1b/";
+  apiMega = "http://localhost/db-project/h1b_mega/";
 
   constructor(private httpClient: HttpClient) { }
 
-  load(): any {
-    return this.httpClient.get("http://localhost/db-project/test.php");
+  read(): any {
+    return this.httpClient.get(this.api + "read.php");
+  }
+
+  readMega(): any {
+    return this.httpClient.get(this.apiMega + "read.php");
   }
 }
