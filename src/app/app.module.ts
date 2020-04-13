@@ -20,6 +20,7 @@ import { EmploymentInfoComponent } from './employment-info/employment-info.compo
 import { JobDescriptionComponent } from './job-description/job-description.component';
 import { WagesComponent } from './wages/wages.component';
 import { WorksiteInfoComponent } from './worksite-info/worksite-info.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WorksiteInfoComponent } from './worksite-info/worksite-info.component';
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

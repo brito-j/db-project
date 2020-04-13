@@ -1,11 +1,43 @@
-<clr-datagrid [(clrDgSelected)]="selected">
+<clr-modal [(clrModalOpen)]="open">
+  <h3 class="modal-title">Update {{case_number}}</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Agent Representing Employer</label>
+        <input clrInput type="text" [(ngModel)]="agent_representing_employer" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney Name</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_name" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney City</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_city" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney State</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_state" name="1" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="open = false">Cancel</button>
+    <button id="btn" type="button" class="btn btn-primary" (click)="update()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-datagrid>
   <clr-dg-column>Case Number</clr-dg-column>
   <clr-dg-column>Agent Representing Employer</clr-dg-column>
   <clr-dg-column>Agent Attorney Name</clr-dg-column>
   <clr-dg-column>Agent Attorney City</clr-dg-column>
   <clr-dg-column>Agent Attorney State</clr-dg-column>
 
-  <clr-dg-row *clrDgItems="let datum of data">
+  <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onUpdate(datum)">Update</button>
+      <button class="action-item" (click)="onDelete(datum)">Delete</button>
+    </clr-dg-action-overflow>
     <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
     <clr-dg-cell>{{datum.agent_representing_employer}}</clr-dg-cell>
     <clr-dg-cell>{{datum.agent_attorney_name}}</clr-dg-cell>

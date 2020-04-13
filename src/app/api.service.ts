@@ -18,4 +18,9 @@ export class ApiService {
   readMega(): any {
     return this.httpClient.get(this.apiMega + "read.php");
   }
+
+  update(data, table): any {
+    return this.httpClient.post(this.api + "update_" + table + ".php", data);
+  }
+
 }
