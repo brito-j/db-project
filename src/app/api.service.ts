@@ -23,4 +23,7 @@ export class ApiService {
     return this.httpClient.post(this.api + "update_" + table + ".php", data);
   }
 
+  delete(data): any {
+    return this.httpClient.post(this.api + "delete.php", data);
+  }
 }

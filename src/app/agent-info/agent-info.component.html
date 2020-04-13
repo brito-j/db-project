@@ -36,7 +36,7 @@
   <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
     <clr-dg-action-overflow>
       <button class="action-item" (click)="onUpdate(datum)">Update</button>
-      <button class="action-item" (click)="onDelete(datum)">Delete</button>
+      <button class="action-item" (click)="delete(datum)">Delete</button>
     </clr-dg-action-overflow>
     <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
     <clr-dg-cell>{{datum.agent_representing_employer}}</clr-dg-cell>

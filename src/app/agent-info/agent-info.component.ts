@@ -19,6 +19,7 @@ export class AgentInfoComponent implements OnInit {
   agent_employer_state: string = "";
 
   updateData: FormData = new FormData();
+  deleteData: FormData = new FormData();
   table: string = "agent_info";
 
   constructor(private apiService: ApiService) { }
@@ -40,11 +41,16 @@ export class AgentInfoComponent implements OnInit {
     this.updateData.append('agent_attorney_city', this.agent_employer_city);
     this.updateData.append('agent_attorney_state', this.agent_employer_state);
     this.apiService.update(this.updateData, this.table).subscribe(() => {
-      location.reload();
+      location.reload()
     });
   }
 
-  onDelete(datum): void {}
+  delete(datum): void {
+    this.case_number = datum.case_number;
+    this.deleteData.append('table', this.table);
+    this.deleteData.append('case_number', this.case_number);
+    this.apiService.delete(this.deleteData).subscribe(() => {location.reload()})
+  }
 
   ngOnInit(): void { this.read() }
 
