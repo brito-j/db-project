@@ -11,7 +11,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  read(table: string): any {
+  create(data, table): any {
+    return this.httpClient.post(this.api + "create_" + table + ".php", data);
+  }
+
+  read(table): any {
     return this.httpClient.get(this.api + "read.php?table=" + table);
   }
 

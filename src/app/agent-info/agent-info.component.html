@@ -1,4 +1,36 @@
-<clr-modal [(clrModalOpen)]="open">
+<clr-modal [(clrModalOpen)]="openCreate">
+  <h3 class="modal-title">Create New Record</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Number</label>
+        <input clrInput type="text" [(ngModel)]="case_number" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Representing Employer</label>
+        <input clrInput type="text" [(ngModel)]="agent_representing_employer" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney Name</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_name" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney City</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_city" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Agent Attorney State</label>
+        <input clrInput type="text" [(ngModel)]="agent_employer_state" name="1" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openCreate = false">Cancel</button>
+    <button id="btn" type="button" class="btn btn-primary" (click)="create()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openUpdate">
   <h3 class="modal-title">Update {{case_number}}</h3>
   <div class="modal-body">
     <form>
@@ -21,7 +53,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-danger" (click)="open = false">Cancel</button>
+    <button type="button" class="btn btn-outline-danger" (click)="openUpdate = false">Cancel</button>
     <button id="btn" type="button" class="btn btn-primary" (click)="update()">Submit</button>
   </div>
 </clr-modal>
@@ -46,6 +78,7 @@
   </clr-dg-row>
 
   <clr-dg-footer>
+    <button class="btn btn-sm btn-outline-primary" (click)="onCreate()">Create</button>
     <clr-dg-pagination #pagination [clrDgPageSize]="5">
       <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
       {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}

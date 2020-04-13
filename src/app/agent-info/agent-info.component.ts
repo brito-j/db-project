@@ -10,7 +10,8 @@ import {AgentInfo} from '../interfaces/agent-info';
 export class AgentInfoComponent implements OnInit {
 
   data: AgentInfo[] = [];
-  open: boolean = false;
+  openUpdate: boolean = false;
+  openCreate: boolean = false;
 
   case_number: string = "";
   agent_representing_employer: string = "";
@@ -18,11 +19,27 @@ export class AgentInfoComponent implements OnInit {
   agent_employer_city: string = "";
   agent_employer_state: string = "";
 
+  createData: FormData = new FormData();
   updateData: FormData = new FormData();
   deleteData: FormData = new FormData();
   table: string = "agent_info";
 
   constructor(private apiService: ApiService) { }
+
+  onCreate(): void {
+    this.openCreate = true;
+  }
+
+  create(): void {
+    this.createData.append('case_number', this.case_number);
+    this.createData.append('agent_representing_employer', this.agent_representing_employer);
+    this.createData.append('agent_attorney_name', this.agent_employer_name);
+    this.createData.append('agent_attorney_city', this.agent_employer_city);
+    this.createData.append('agent_attorney_state', this.agent_employer_state);
+    this.apiService.create(this.createData, this.table).subscribe(() => {
+      location.reload()
+    });
+  }
 
   read(): void {
     this.apiService.read(this.table)
@@ -30,7 +47,7 @@ export class AgentInfoComponent implements OnInit {
   }
 
   onUpdate(datum): void {
-    this.open = true;
+    this.openUpdate = true;
     this.case_number = datum.case_number;
   }
 
