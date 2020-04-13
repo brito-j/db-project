@@ -1,4 +1,88 @@
-<clr-datagrid [(clrDgSelected)]="selected">
+<clr-modal [(clrModalOpen)]="openCreate">
+  <h3 class="modal-title">Create New Record</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Number</label>
+        <input clrInput type="text" [(ngModel)]="case_number" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Case Status</label>
+        <input clrInput type="text" [(ngModel)]="case_status" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Case Submitted</label>
+        <input clrInput type="text" [(ngModel)]="case_submitted" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Decision Date</label>
+        <input clrInput type="text" [(ngModel)]="decision_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Visa Class</label>
+        <input clrInput type="text" [(ngModel)]="visa_class" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employment Start Date</label>
+        <input clrInput type="text" [(ngModel)]="employment_start_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employment End Date</label>
+        <input clrInput type="text" [(ngModel)]="employment_end_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Original Cert Date</label>
+        <input clrInput type="text" [(ngModel)]="original_cert_date" name="1" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openCreate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openUpdate">
+  <h3 class="modal-title">Update {{case_number}}</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Status</label>
+        <input clrInput type="text" [(ngModel)]="case_status" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Case Submitted</label>
+        <input clrInput type="text" [(ngModel)]="case_submitted" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Decision Date</label>
+        <input clrInput type="text" [(ngModel)]="decision_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Visa Class</label>
+        <input clrInput type="text" [(ngModel)]="visa_class" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employment Start Date</label>
+        <input clrInput type="text" [(ngModel)]="employment_start_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employment End Date</label>
+        <input clrInput type="text" [(ngModel)]="employment_end_date" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Original Cert Date</label>
+        <input clrInput type="text" [(ngModel)]="original_cert_date" name="1" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openUpdate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="update()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-datagrid>
   <clr-dg-column>Case Number</clr-dg-column>
   <clr-dg-column>Case Status</clr-dg-column>
   <clr-dg-column>Case Submitted</clr-dg-column>
@@ -8,7 +92,11 @@
   <clr-dg-column>Employment End Date</clr-dg-column>
   <clr-dg-column>Original Cert Date</clr-dg-column>
 
-  <clr-dg-row *clrDgItems="let datum of data">
+  <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onUpdate(datum)">Update</button>
+      <button class="action-item" (click)="delete(datum)">Delete</button>
+    </clr-dg-action-overflow>
     <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
     <clr-dg-cell>{{datum.case_status}}</clr-dg-cell>
     <clr-dg-cell>{{datum.case_submitted}}</clr-dg-cell>
@@ -21,6 +109,7 @@
 
   <clr-dg-footer>
     <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <button class="btn btn-sm btn-outline-primary" (click)="onCreate()">Create</button>
       <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
       {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
       of {{pagination.totalItems}} rows
