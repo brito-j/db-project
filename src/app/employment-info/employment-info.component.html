@@ -1,4 +1,96 @@
-<clr-datagrid [(clrDgSelected)]="selected">
+<clr-modal [(clrModalOpen)]="openCreate">
+  <h3 class="modal-title">Create New Record</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Number</label>
+        <input clrInput type="text" [(ngModel)]="case_number" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Total Workers</label>
+        <input clrInput type="text" [(ngModel)]="total_workers" name="2" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>New Employment</label>
+        <input clrInput type="text" [(ngModel)]="new_employment" name="3" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Continued Employment</label>
+        <input clrInput type="text" [(ngModel)]="continued_employment" name="4" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Change Previous Employment</label>
+        <input clrInput type="text" [(ngModel)]="change_previous_employment" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>New Concurrent Employment</label>
+        <input clrInput type="text" [(ngModel)]="new_concurrent_employment" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Change Employer</label>
+        <input clrInput type="text" [(ngModel)]="change_employer" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Amended Petition</label>
+        <input clrInput type="text" [(ngModel)]="amended_petition" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Full Time Position</label>
+        <input clrInput type="text" [(ngModel)]="full_time_position" name="5" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openCreate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openUpdate">
+  <h3 class="modal-title">Update {{case_number}}</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Total Workers</label>
+        <input clrInput type="text" [(ngModel)]="total_workers" name="2" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>New Employment</label>
+        <input clrInput type="text" [(ngModel)]="new_employment" name="3" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Continued Employment</label>
+        <input clrInput type="text" [(ngModel)]="continued_employment" name="4" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Change Previous Employment</label>
+        <input clrInput type="text" [(ngModel)]="change_previous_employment" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>New Concurrent Employment</label>
+        <input clrInput type="text" [(ngModel)]="new_concurrent_employment" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Change Employer</label>
+        <input clrInput type="text" [(ngModel)]="change_employer" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Amended Petition</label>
+        <input clrInput type="text" [(ngModel)]="amended_petition" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Full Time Position</label>
+        <input clrInput type="text" [(ngModel)]="full_time_position" name="5" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openUpdate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="update()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-datagrid>
   <clr-dg-column>Case Number</clr-dg-column>
   <clr-dg-column>Total Workers</clr-dg-column>
   <clr-dg-column>New Employment</clr-dg-column>
@@ -9,7 +101,11 @@
   <clr-dg-column>Amended Petition</clr-dg-column>
   <clr-dg-column>Full-Time Position</clr-dg-column>
 
-  <clr-dg-row *clrDgItems="let datum of data">
+  <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onUpdate(datum)">Update</button>
+      <button class="action-item" (click)="delete(datum)">Delete</button>
+    </clr-dg-action-overflow>
     <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
     <clr-dg-cell>{{datum.total_workers}}</clr-dg-cell>
     <clr-dg-cell>{{datum.new_employment}}</clr-dg-cell>
@@ -23,6 +119,7 @@
 
   <clr-dg-footer>
     <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <button class="btn btn-sm btn-outline-primary" (click)="onCreate()">Create</button>
       <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
       {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
       of {{pagination.totalItems}} rows
