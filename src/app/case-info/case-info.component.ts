@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Application} from '../interfaces/application';
 import {ApiService} from '../api.service';
 import {CaseInfo} from '../interfaces/case-info';
 
