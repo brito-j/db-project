@@ -8,7 +8,7 @@ if (isset($_GET['table'])) {
 }
 
 
-$query = "SELECT * FROM $table ORDER BY case_number LIMIT 1000";
+$query = "SELECT * FROM $table LIMIT 1000";
 try {
     $statement = $connection->prepare($query);
     $statement->execute();

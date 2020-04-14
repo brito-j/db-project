@@ -1,14 +1,12 @@
 <?php
 require 'connect.php';
 
-if (isset($_GET['table'])) {
-    $table = $_GET['table'];
-} else {
-    die("No table selected.");
-}
+$table = $_POST['table'];
+$case_number = $_POST['case_number'];
 
+$query = "DELETE FROM $table ";
+$query .= "WHERE case_number = '$case_number'";
 
-$query = "SELECT * FROM $table ORDER BY case_number LIMIT 1000";
 try {
     $statement = $connection->prepare($query);
     $statement->execute();
