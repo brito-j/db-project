@@ -9,6 +9,7 @@ import {EmploymentH1bInfo} from '../interfaces/employment-h1b-info';
 })
 export class EmploymentH1bInfoComponent implements OnInit {
 
+  loading: boolean = true;
   data: EmploymentH1bInfo[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -43,8 +44,11 @@ export class EmploymentH1bInfoComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("employment_h1b_info")
-      .subscribe((data: EmploymentH1bInfo[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: EmploymentH1bInfo[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

@@ -9,6 +9,7 @@ import {AgentInfo} from '../interfaces/agent-info';
 })
 export class AgentInfoComponent implements OnInit {
 
+  loading: boolean = true;
   data: AgentInfo[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -43,7 +44,10 @@ export class AgentInfoComponent implements OnInit {
 
   read(): void {
     this.apiService.read(this.table)
-      .subscribe((data: AgentInfo[]) => { this.data = data })
+      .subscribe((data: AgentInfo[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

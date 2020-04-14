@@ -9,6 +9,7 @@ import {WorksiteInfo} from '../interfaces/worksite-info';
 })
 export class WorksiteInfoComponent implements OnInit {
 
+  loading: boolean = true;
   data: WorksiteInfo[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -45,8 +46,11 @@ export class WorksiteInfoComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("worksite_info")
-      .subscribe((data: WorksiteInfo[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: WorksiteInfo[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

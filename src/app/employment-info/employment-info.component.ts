@@ -9,6 +9,7 @@ import {EmploymentInfo} from '../interfaces/employment-info';
 })
 export class EmploymentInfoComponent implements OnInit {
 
+  loading: boolean = true;
   data: EmploymentInfo[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -51,8 +52,11 @@ export class EmploymentInfoComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("employment_info")
-      .subscribe((data: EmploymentInfo[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: EmploymentInfo[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

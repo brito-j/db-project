@@ -9,6 +9,7 @@ import {ApiService} from '../api.service';
 })
 export class AgentRepresentedPercentageComponent implements OnInit {
 
+  loading: boolean = true;
   data: Application[] = [];
   table: string = "agent_represented_percentage"
 
@@ -16,7 +17,10 @@ export class AgentRepresentedPercentageComponent implements OnInit {
 
   readAnalytics(): void {
     this.apiService.readAnalytics(this.table)
-      .subscribe((data: Application[]) => { this.data = data })
+      .subscribe((data: Application[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   ngOnInit(): void { this.readAnalytics() }

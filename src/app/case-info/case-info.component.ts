@@ -9,6 +9,7 @@ import {CaseInfo} from '../interfaces/case-info';
 })
 export class CaseInfoComponent implements OnInit {
 
+  loading: boolean = true;
   data: CaseInfo[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -48,8 +49,11 @@ export class CaseInfoComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("case_info")
-      .subscribe((data: CaseInfo[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: CaseInfo[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

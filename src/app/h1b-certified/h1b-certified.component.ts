@@ -9,6 +9,7 @@ import {ApiService} from '../api.service';
 })
 export class H1bCertifiedComponent implements OnInit {
 
+  loading: boolean = true;
   data: Application[] = [];
   table: string = "h1b_certified"
 
@@ -16,7 +17,10 @@ export class H1bCertifiedComponent implements OnInit {
 
   read(): void {
     this.apiService.read(this.table)
-      .subscribe((data: Application[]) => { this.data = data })
+      .subscribe((data: Application[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   ngOnInit(): void { this.read() }

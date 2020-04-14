@@ -9,6 +9,7 @@ import {Wages} from '../interfaces/wages';
 })
 export class WagesComponent implements OnInit {
 
+  loading: boolean = true;
   data: Wages[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -53,8 +54,11 @@ export class WagesComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("wages")
-      .subscribe((data: Wages[]) => { console.log(data);this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: Wages[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

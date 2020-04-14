@@ -9,6 +9,7 @@ import {JobDescription} from '../interfaces/job-description';
 })
 export class JobDescriptionComponent implements OnInit {
 
+  loading: boolean = true;
   data: JobDescription[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -43,8 +44,11 @@ export class JobDescriptionComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("job_description")
-      .subscribe((data: JobDescription[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: JobDescription[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

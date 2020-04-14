@@ -9,6 +9,7 @@ import {EmployerAudit} from '../interfaces/employer-audit';
 })
 export class EmployerAuditComponent implements OnInit {
 
+  loading: boolean = true;
   data: EmployerAudit[] = [];
   openUpdate: boolean = false;
   openCreate: boolean = false;
@@ -57,8 +58,11 @@ export class EmployerAuditComponent implements OnInit {
   }
 
   read(): void {
-    this.apiService.read("employer_audit")
-      .subscribe((data: EmployerAudit[]) => { this.data = data })
+    this.apiService.read(this.table)
+      .subscribe((data: EmployerAudit[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   onUpdate(datum): void {

@@ -9,13 +9,17 @@ import { ApiService } from '../api.service';
 })
 export class ReadComponent implements OnInit {
 
+  loading: boolean = true;
   data: Application[] = [];
 
   constructor(private apiService: ApiService) { }
 
   readMega(): void {
     this.apiService.readMega()
-      .subscribe((data: Application[]) => { this.data = data })
+      .subscribe((data: Application[]) => {
+        this.data = data;
+        this.loading = false;
+      })
   }
 
   ngOnInit(): void { this.readMega() }
