@@ -12,6 +12,15 @@ import {EmploymentInfoComponent} from './employment-info/employment-info.compone
 import {JobDescriptionComponent} from './job-description/job-description.component';
 import {WagesComponent} from './wages/wages.component';
 import {WorksiteInfoComponent} from './worksite-info/worksite-info.component';
+import {H1bPublicDataComponent} from './h1b-public-data/h1b-public-data.component';
+import {H1bCertifiedComponent} from './h1b-certified/h1b-certified.component';
+import {H1bAgentComponent} from './h1b-agent/h1b-agent.component';
+import {CaseStatusPercentageComponent} from './case-status-percentage/case-status-percentage.component';
+import {VisaClassCountComponent} from './visa-class-count/visa-class-count.component';
+import {AgentRepresentedPercentageComponent} from './agent-represented-percentage/agent-represented-percentage.component';
+import {SocNameCountComponent} from './soc-name-count/soc-name-count.component';
+import {H1bDependentPercentageComponent} from './h1b-dependent-percentage/h1b-dependent-percentage.component';
+import {AverageWageComponent} from './average-wage/average-wage.component';
 
 
 const routes: Routes = [
@@ -62,6 +71,42 @@ const routes: Routes = [
   {
     path: 'worksite-info',
     component: WorksiteInfoComponent
+  },
+  {
+    path: 'h1b-public-data',
+    component: H1bPublicDataComponent
+  },
+  {
+    path: 'h1b-certified',
+    component: H1bCertifiedComponent
+  },
+  {
+    path: 'h1b-agent',
+    component: H1bAgentComponent
+  },
+  {
+    path: 'case-status-percentage',
+    component: CaseStatusPercentageComponent
+  },
+  {
+    path: 'visa-class-count',
+    component: VisaClassCountComponent
+  },
+  {
+    path: 'agent-represented-percentage',
+    component: AgentRepresentedPercentageComponent
+  },
+  {
+    path: 'soc-name-count',
+    component: SocNameCountComponent
+  },
+  {
+    path: 'h1b-dependent-percentage',
+    component: H1bDependentPercentageComponent
+  },
+  {
+    path: 'average-wage',
+    component: AverageWageComponent
   },
   { path: '',
     redirectTo: '/about',

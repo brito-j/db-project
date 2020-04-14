@@ -19,6 +19,10 @@ export class ApiService {
     return this.httpClient.get(this.api + "read.php?table=" + table);
   }
 
+  readAnalytics(table): any {
+    return this.httpClient.get(this.api + "read_analytics.php?table=" + table);
+  }
+
   readMega(): any {
     return this.httpClient.get(this.apiMega + "read.php");
   }

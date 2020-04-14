@@ -21,6 +21,15 @@ import { JobDescriptionComponent } from './job-description/job-description.compo
 import { WagesComponent } from './wages/wages.component';
 import { WorksiteInfoComponent } from './worksite-info/worksite-info.component';
 import {FormsModule} from '@angular/forms';
+import { H1bPublicDataComponent } from './h1b-public-data/h1b-public-data.component';
+import { H1bCertifiedComponent } from './h1b-certified/h1b-certified.component';
+import { H1bAgentComponent } from './h1b-agent/h1b-agent.component';
+import { CaseStatusPercentageComponent } from './case-status-percentage/case-status-percentage.component';
+import { VisaClassCountComponent } from './visa-class-count/visa-class-count.component';
+import { AgentRepresentedPercentageComponent } from './agent-represented-percentage/agent-represented-percentage.component';
+import { SocNameCountComponent } from './soc-name-count/soc-name-count.component';
+import { H1bDependentPercentageComponent } from './h1b-dependent-percentage/h1b-dependent-percentage.component';
+import { AverageWageComponent } from './average-wage/average-wage.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,16 @@ import {FormsModule} from '@angular/forms';
     EmploymentInfoComponent,
     JobDescriptionComponent,
     WagesComponent,
-    WorksiteInfoComponent
+    WorksiteInfoComponent,
+    H1bPublicDataComponent,
+    H1bCertifiedComponent,
+    H1bAgentComponent,
+    CaseStatusPercentageComponent,
+    VisaClassCountComponent,
+    AgentRepresentedPercentageComponent,
+    SocNameCountComponent,
+    H1bDependentPercentageComponent,
+    AverageWageComponent,
   ],
   imports: [
     BrowserModule,
