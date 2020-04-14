@@ -1,0 +1,89 @@
+<clr-modal [(clrModalOpen)]="openCreate">
+  <h3 class="modal-title">Create New Record</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Number</label>
+        <input clrInput type="text" [(ngModel)]="case_number" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>H1B Dependent</label>
+        <input clrInput type="text" [(ngModel)]="h1b_dependent" name="2" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Willful Violator</label>
+        <input clrInput type="text" [(ngModel)]="willful_violator" name="3" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Support H1B</label>
+        <input clrInput type="text" [(ngModel)]="support_h1b" name="4" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Labor Con Agree</label>
+        <input clrInput type="text" [(ngModel)]="labor_con_agree" name="5" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openCreate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openUpdate">
+  <h3 class="modal-title">Update {{case_number}}</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>H1B Dependent</label>
+        <input clrInput type="text" [(ngModel)]="h1b_dependent" name="2" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Willful Violator</label>
+        <input clrInput type="text" [(ngModel)]="willful_violator" name="3" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Support H1B</label>
+        <input clrInput type="text" [(ngModel)]="support_h1b" name="4" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Labor Con Agree</label>
+        <input clrInput type="text" [(ngModel)]="labor_con_agree" name="5" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openUpdate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="update()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-datagrid [clrDgLoading]="loading">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>H1B Dependent</clr-dg-column>
+  <clr-dg-column>Willful Violator</clr-dg-column>
+  <clr-dg-column>Support H1B</clr-dg-column>
+  <clr-dg-column>Labor Con Agree</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onUpdate(datum)">Update</button>
+      <button class="action-item" (click)="delete(datum)">Delete</button>
+    </clr-dg-action-overflow>
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.h1b_dependent}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.willful_violator}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.support_h1b}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.labor_con_agree}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <button class="btn btn-sm btn-outline-primary" (click)="onCreate()">Create</button>
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+

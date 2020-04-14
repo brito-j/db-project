@@ -1,0 +1,17 @@
+<clr-datagrid [clrDgLoading]="loading">
+  <clr-dg-column>SOC Name</clr-dg-column>
+  <clr-dg-column>Number of Employees</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data">
+    <clr-dg-cell>{{datum[0]}}</clr-dg-cell>
+    <clr-dg-cell>{{datum[1]}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

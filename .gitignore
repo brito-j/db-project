@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# DB Credentials
+src/api/h1b/connect.php
+src/api/h1b_mega/connect.php

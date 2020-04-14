@@ -1,0 +1,159 @@
+<clr-modal [(clrModalOpen)]="openCreate">
+  <h3 class="modal-title">Create New Record</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Case Number</label>
+        <input clrInput type="text" [(ngModel)]="case_number" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Name</label>
+        <input clrInput type="text" [(ngModel)]="employer_name" name="2" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Business DBA</label>
+        <input clrInput type="text" [(ngModel)]="employer_business_dba" name="3" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Address</label>
+        <input clrInput type="text" [(ngModel)]="employer_address" name="4" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer City</label>
+        <input clrInput type="text" [(ngModel)]="employer_city" name="5" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer State</label>
+        <input clrInput type="text" [(ngModel)]="employer_state" name="6" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Postal Code</label>
+        <input clrInput type="text" [(ngModel)]="employer_postal_code" name="7" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Country</label>
+        <input clrInput type="text" [(ngModel)]="employer_country" name="8" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Province</label>
+        <input clrInput type="text" [(ngModel)]="employer_province" name="9" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Phone</label>
+        <input clrInput type="text" [(ngModel)]="employer_phone" name="10" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Phone Ext</label>
+        <input clrInput type="text" [(ngModel)]="employer_phone_ext" name="11" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Date Changed</label>
+        <input clrInput type="text" [(ngModel)]="date_changed" name="12" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openCreate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="create()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="openUpdate">
+  <h3 class="modal-title">Update {{case_number}}</h3>
+  <div class="modal-body">
+    <form>
+      <clr-input-container>
+        <label>Employer Name</label>
+        <input clrInput type="text" [(ngModel)]="employer_name" name="14" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Business DBA</label>
+        <input clrInput type="text" [(ngModel)]="employer_business_dba" name="15" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Address</label>
+        <input clrInput type="text" [(ngModel)]="employer_address" name="16" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer City</label>
+        <input clrInput type="text" [(ngModel)]="employer_city" name="1" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer State</label>
+        <input clrInput type="text" [(ngModel)]="employer_state" name="17" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Postal Code</label>
+        <input clrInput type="text" [(ngModel)]="employer_postal_code" name="18" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Country</label>
+        <input clrInput type="text" [(ngModel)]="employer_country" name="19" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Province</label>
+        <input clrInput type="text" [(ngModel)]="employer_province" name="20" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Phone</label>
+        <input clrInput type="text" [(ngModel)]="employer_phone" name="21" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Employer Phone Ext</label>
+        <input clrInput type="text" [(ngModel)]="employer_phone_ext" name="22" />
+      </clr-input-container>
+      <clr-input-container>
+        <label>Date Changed</label>
+        <input clrInput type="text" [(ngModel)]="date_changed" name="23" />
+      </clr-input-container>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="openUpdate = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="update()">Submit</button>
+  </div>
+</clr-modal>
+
+<clr-datagrid [clrDgLoading]="loading">
+  <clr-dg-column>Case Number</clr-dg-column>
+  <clr-dg-column>Employer Name</clr-dg-column>
+  <clr-dg-column>Employer Business DBA</clr-dg-column>
+  <clr-dg-column>Employer Address</clr-dg-column>
+  <clr-dg-column>Employer City</clr-dg-column>
+  <clr-dg-column>Employer State</clr-dg-column>
+  <clr-dg-column>Employer Postal Code</clr-dg-column>
+  <clr-dg-column>Employer Country</clr-dg-column>
+  <clr-dg-column>Employer Province</clr-dg-column>
+  <clr-dg-column>Employer Phone</clr-dg-column>
+  <clr-dg-column>Employer Phone Ext</clr-dg-column>
+  <clr-dg-column>Date Changed</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let datum of data" [clrDgItem]="datum">
+    <clr-dg-action-overflow>
+      <button class="action-item" (click)="onUpdate(datum)">Update</button>
+      <button class="action-item" (click)="delete(datum)">Delete</button>
+    </clr-dg-action-overflow>
+    <clr-dg-cell>{{datum.case_number}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_name}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_business_dba}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_address}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_city}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_state}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_postal_code}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_country}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_province}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_phone}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.employer_phone_ext}}</clr-dg-cell>
+    <clr-dg-cell>{{datum.date_changed}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="5">
+      <button class="btn btn-sm btn-outline-primary" (click)="onCreate()">Create</button>
+      <clr-dg-page-size [clrPageSizeOptions]="[5, 50, 100]">rows per page</clr-dg-page-size>
+      {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+      of {{pagination.totalItems}} rows
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>
+
